@@ -1,0 +1,100 @@
+---
+import Copy from "@/assets/svg/copy.svg";
+---
+
+<main
+  class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+>
+  <div class="w-full max-w-md space-y-8">
+    <header class="text-center">
+      <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">
+        Generador de Contraseñas Seguras
+      </h2>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+        Cree contraseñas fuertes y únicas para proteger sus cuentas.
+      </p>
+    </header>
+
+    <form
+      class="bg-white dark:bg-slate-900/40 p-8 rounded-lg shadow-md space-y-6 border border-slate-200 dark:border-slate-800"
+    >
+      <fieldset>
+        <label
+          class="block text-sm font-medium text-slate-700 dark:text-slate-300"
+          for="password-length">Longitud de la contraseña</label
+        >
+        <input
+          class="mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md text-sm shadow-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-primary focus:border-primary dark:text-white"
+          min="12"
+          id="password-length"
+          type="number"
+          value="16"
+        />
+      </fieldset>
+
+      <fieldset class="space-y-4">
+        <div class="flex items-start">
+          <div class="flex items-center h-5">
+            <input
+              checked=""
+              class="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-100 dark:bg-slate-800 checked:bg-primary dark:checked:bg-primary"
+              id="include-numbers"
+              name="include-numbers"
+              type="checkbox"
+            />
+          </div>
+          <div class="ml-3 text-sm">
+            <label
+              class="font-medium text-slate-700 dark:text-slate-300"
+              for="include-numbers">Incluir números (0-9)</label
+            >
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="flex items-center h-5">
+            <input
+              checked=""
+              class="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-100 dark:bg-slate-800 checked:bg-primary dark:checked:bg-primary"
+              id="include-special"
+              name="include-special"
+              type="checkbox"
+            />
+          </div>
+          <div class="ml-3 text-sm">
+            <label
+              class="font-medium text-slate-700 dark:text-slate-300"
+              for="include-special"
+              >Incluir caracteres especiales (!@#$...)</label
+            >
+          </div>
+        </div>
+      </fieldset>
+      <button
+        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark"
+        type="button"
+      >
+        Generar Contraseña
+      </button>
+      <div class="relative">
+        <!-- <label
+          class="block text-sm font-medium text-slate-700 dark:text-slate-300 sr-only"
+          for="generated-password">Contraseña Generada</label
+        > -->
+        <input
+          class="w-full pr-12 pl-4 py-3 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-sm text-slate-700 dark:text-slate-300 font-mono tracking-wider"
+          id="generated-password"
+          placeholder="Su contraseña segura aparecerá aquí"
+          readonly=""
+          type="text"
+        />
+        <button
+          aria-label="Copiar contraseña"
+          class="absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary"
+        >
+          <Copy />
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
