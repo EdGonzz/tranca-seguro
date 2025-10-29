@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@midudev/tailwind-animations";
 
 @theme {
   --color-primary: #1173d4;
@@ -7,5 +8,9 @@
 }
 
 body {
-  font-family: 'Ubuntu Sans Mono Variable', monospace;
+  font-family: "Ubuntu Sans Mono Variable", monospace;
+}
+
+.button-clicked {
+  @apply bg-green-600 transition-colors animate-blink;
 }
