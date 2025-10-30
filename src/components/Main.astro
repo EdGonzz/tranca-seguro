@@ -87,8 +87,9 @@ import Copy from "@/assets/svg/copy.svg";
           type="text"
         />
         <button
+          id="copy-password"
           aria-label="Copiar contraseña"
-          class="absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary"
+          class="absolute inset-y-0 right-0 flex items-center px-4 text-primary dark:text-primary animate-pulse"
         >
           <Copy />
         </button>
@@ -115,6 +116,9 @@ import Copy from "@/assets/svg/copy.svg";
   const $generatePassword = document.getElementById(
     "generate-password"
   ) as HTMLButtonElement;
+  const $copyPassword = document.getElementById(
+    "copy-password"
+  ) as HTMLButtonElement;
 
   $generatePassword.addEventListener("click", (e) => {
     e.preventDefault();
@@ -139,5 +143,19 @@ import Copy from "@/assets/svg/copy.svg";
       $generatePassword.disabled = false;
       $generatePassword.textContent = "Generar Contraseña";
     }, 2000);
+  });
+
+  $copyPassword.addEventListener("click", () => {
+    if ($generatedPassword.value) {
+      let copyIcon = $copyPassword.innerHTML;
+
+      navigator.clipboard.writeText($generatedPassword.value);
+      $copyPassword.textContent = "¡Copiado!";
+      $copyPassword.classList.remove("animate-pulse");
+      setTimeout(() => {
+        $copyPassword.innerHTML = copyIcon;
+        $copyPassword.classList.add("animate-pulse");
+      }, 2000);
+    }
   });
 </script>
