@@ -1,0 +1,77 @@
+<fieldset>
+  <div class="flex justify-between">
+    <label
+      for="password-length"
+      class="block mb-2.5 text-sm font-medium text-heading"
+      >Longitud de la contraseña</label
+    >
+    <span id="length-span">16</span>
+  </div>
+  <input
+    id="password-length"
+    type="range"
+    min="12"
+    max="32"
+    value="16"
+    class="w-full h-2 accent-primary bg-gray-300 rounded-full appearance-none cursor-pointer"
+  />
+  <div class="flex justify-between mt-1">
+    <span
+      id="password-length-value"
+      class="text-sm text-slate-600 dark:text-slate-400">8</span
+    >
+    <span class="text-sm text-slate-600 dark:text-slate-400">32</span>
+  </div>
+</fieldset>
+
+<fieldset class="space-y-4">
+  <div class="flex items-start">
+    <div class="flex items-center h-5">
+      <input
+        checked=""
+        class="h-4 accent-primary w-4 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-100 dark:bg-slate-800 checked:bg-primary dark:checked:bg-primary"
+        id="include-numbers"
+        name="include-numbers"
+        type="checkbox"
+      />
+    </div>
+    <div class="ml-3 text-sm">
+      <label
+        class="font-medium text-slate-700 dark:text-slate-300"
+        for="include-numbers">Incluir números (0-9)</label
+      >
+    </div>
+  </div>
+
+  <div class="flex items-start">
+    <div class="flex items-center h-5">
+      <input
+        checked=""
+        class="h-4 w-4 accent-primary rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-100 dark:bg-slate-800 checked:bg-primary dark:checked:bg-primary"
+        id="include-special"
+        name="include-special"
+        type="checkbox"
+      />
+    </div>
+    <div class="ml-3 text-sm">
+      <label
+        class="font-medium text-slate-700 dark:text-slate-300"
+        for="include-special">Incluir caracteres especiales (!@#$...)</label
+      >
+    </div>
+  </div>
+</fieldset>
+
+<script>
+  import { updatePassword } from "@/tools/updatePassword";
+
+  const $passwordLength = document.getElementById(
+    "password-length"
+  ) as HTMLInputElement;
+  const $lengthSpan = document.getElementById("length-span") as HTMLSpanElement;
+
+  $passwordLength.addEventListener("input", () => {
+    $lengthSpan.textContent = $passwordLength.value;
+    updatePassword();
+  });
+</script>

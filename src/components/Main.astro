@@ -1,5 +1,6 @@
 ---
 import PasswordLabel from "@/components/PasswordLabel.astro";
+import Inputs from "./Inputs.astro";
 ---
 
 <main
@@ -19,59 +20,7 @@ import PasswordLabel from "@/components/PasswordLabel.astro";
       class="bg-white dark:bg-slate-900/40 p-8 rounded-lg shadow-md space-y-6 border border-slate-200 dark:border-slate-800"
     >
       <PasswordLabel />
-      <fieldset>
-        <label
-          class="block text-sm font-medium text-slate-700 dark:text-slate-300"
-          for="password-length">Longitud de la contraseña</label
-        >
-        <input
-          class="mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md text-sm shadow-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-primary focus:border-primary dark:text-white"
-          min="12"
-          max="30"
-          id="password-length"
-          type="number"
-          value="16"
-        />
-      </fieldset>
-
-      <fieldset class="space-y-4">
-        <div class="flex items-start">
-          <div class="flex items-center h-5">
-            <input
-              checked=""
-              class="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-100 dark:bg-slate-800 checked:bg-primary dark:checked:bg-primary"
-              id="include-numbers"
-              name="include-numbers"
-              type="checkbox"
-            />
-          </div>
-          <div class="ml-3 text-sm">
-            <label
-              class="font-medium text-slate-700 dark:text-slate-300"
-              for="include-numbers">Incluir números (0-9)</label
-            >
-          </div>
-        </div>
-
-        <div class="flex items-start">
-          <div class="flex items-center h-5">
-            <input
-              checked=""
-              class="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary bg-slate-100 dark:bg-slate-800 checked:bg-primary dark:checked:bg-primary"
-              id="include-special"
-              name="include-special"
-              type="checkbox"
-            />
-          </div>
-          <div class="ml-3 text-sm">
-            <label
-              class="font-medium text-slate-700 dark:text-slate-300"
-              for="include-special"
-              >Incluir caracteres especiales (!@#$...)</label
-            >
-          </div>
-        </div>
-      </fieldset>
+      <Inputs />
       <button
         id="generate-password"
         class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary transition-all hover:animate-pulse"
@@ -84,19 +33,10 @@ import PasswordLabel from "@/components/PasswordLabel.astro";
 </main>
 
 <script>
-  import { generatePassword } from "@/tools/generatePassword";
+  import { updatePassword } from "@/tools/updatePassword";
 
   const $passwordLength = document.getElementById(
     "password-length"
-  ) as HTMLInputElement;
-  const $includeNumbers = document.getElementById(
-    "include-numbers"
-  ) as HTMLInputElement;
-  const $includeSpecial = document.getElementById(
-    "include-special"
-  ) as HTMLInputElement;
-  const $generatedPassword = document.getElementById(
-    "generated-password"
   ) as HTMLInputElement;
   const $generatePassword = document.getElementById(
     "generate-password"
@@ -105,17 +45,7 @@ import PasswordLabel from "@/components/PasswordLabel.astro";
   $generatePassword.addEventListener("click", (e) => {
     e.preventDefault();
 
-    if (!$passwordLength.checkValidity()) {
-      $passwordLength.reportValidity();
-      return;
-    }
-
-    const password = generatePassword(
-      parseInt($passwordLength.value),
-      $includeNumbers.checked,
-      $includeSpecial.checked
-    );
-    $generatedPassword.value = password;
+    updatePassword();
     $generatePassword.classList.add("button-clicked");
     $generatePassword.disabled = true;
     $generatePassword.textContent = "Contraseña Generada";
@@ -127,9 +57,5 @@ import PasswordLabel from "@/components/PasswordLabel.astro";
     }, 2000);
   });
 
-  $generatedPassword.value = generatePassword(
-    parseInt($passwordLength.value),
-    $includeNumbers.checked,
-    $includeSpecial.checked
-  );
+  updatePassword();
 </script>
