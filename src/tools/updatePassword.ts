@@ -13,10 +13,10 @@ const $includeSpecial = document.getElementById(
 ) as HTMLInputElement;
 
 export function updatePassword() {
-  const password = generatePassword(
-    parseInt($passwordLength.value),
-    $includeNumbers.checked,
-    $includeSpecial.checked
-  );
+  const password = generatePassword({
+    passwordLength: parseInt($passwordLength.value),
+    useNumbers: $includeNumbers.checked,
+    useSymbols: $includeSpecial.checked,
+  });
   $generatedPassword.value = password;
 }

@@ -2,11 +2,17 @@ import { CHARACTERS } from "astro:env/client";
 import { NUMBERS } from "astro:env/client";
 import { SYMBOLS } from "astro:env/client";
 
-export function generatePassword(
-  passwordLength: number,
-  useNumbers: boolean,
-  useSymbols: boolean
-) {
+type passwordOptions = {
+  passwordLength: number;
+  useNumbers: boolean;
+  useSymbols: boolean;
+};
+
+export function generatePassword({
+  passwordLength,
+  useNumbers,
+  useSymbols,
+}: passwordOptions) {
   let availableCharacters = [...CHARACTERS.split("")];
   let password = "";
 
