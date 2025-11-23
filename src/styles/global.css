@@ -10,7 +10,3 @@
 body {
   font-family: "Ubuntu Sans Mono Variable", monospace;
 }
-
-.button-clicked {
-  @apply bg-green-600 transition-colors animate-blink;
-}
