@@ -83,9 +83,23 @@
     "password-length"
   ) as HTMLInputElement;
   const $lengthSpan = document.getElementById("length-span") as HTMLSpanElement;
+  const $includeNumbers = document.getElementById(
+    "include-numbers"
+  ) as HTMLInputElement;
+  const $includeSpecial = document.getElementById(
+    "include-special"
+  ) as HTMLInputElement;
 
   $passwordLength.addEventListener("input", () => {
     $lengthSpan.textContent = $passwordLength.value;
+    updatePassword();
+  }); 
+
+  $includeNumbers.addEventListener("input", () => {
+    updatePassword();
+  });
+
+  $includeSpecial.addEventListener("input", () => {
     updatePassword();
   });
 </script>
