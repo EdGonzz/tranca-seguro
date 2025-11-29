@@ -1,4 +1,5 @@
 import { generatePassword } from "./generatePassword";
+import { getPasswordStrength } from "./getPasswordStrength";
 const $generatedPassword = document.getElementById(
   "generated-password"
 ) as HTMLButtonElement;
@@ -11,6 +12,9 @@ const $includeNumbers = document.getElementById(
 const $includeSpecial = document.getElementById(
   "include-special"
 ) as HTMLInputElement;
+const $strengthSpan = document.getElementById(
+  "strength-span"
+) as HTMLSpanElement;
 
 export function updatePassword() {
   const password = generatePassword({
@@ -19,4 +23,9 @@ export function updatePassword() {
     useSymbols: $includeSpecial.checked,
   });
   $generatedPassword.value = password;
+  $strengthSpan.textContent = getPasswordStrength(
+    parseInt($passwordLength.value),
+    $includeNumbers.checked,
+    $includeSpecial.checked
+  ) as string;
 }
