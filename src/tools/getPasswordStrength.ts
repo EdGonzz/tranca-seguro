@@ -9,6 +9,7 @@ export const getPasswordStrength = (
   if (useNumbers) score++;
   if (useSymbols) score++;
 
+  if (score === 0) return "Insegura";
   if (score === 1) return "Débil";
   if (score === 2) return "Medio";
   if (score === 3) return "Fuerte";
