@@ -1,6 +1,20 @@
 <div class="m-0 flex flex-col gap-2">
   <div class="flex justify-between">
     <label
+      for="password-strength"
+      class="text-sm font-medium text-heading"
+      >Fortaleza de la contraseña</label
+    >
+    <span id="strength-span">Fuerte</span>
+  </div>
+  <div class="w-full h-2 accent-primary bg-gray-300 rounded-full appearance-none cursor-pointer">
+    <span id="password-strength"></span>
+  </div>
+</div>
+
+<div class="m-0 flex flex-col gap-2">
+  <div class="flex justify-between">
+    <label
       for="password-length"
       class="text-sm font-medium text-heading"
       >Longitud de la contraseña</label
@@ -10,7 +24,7 @@
   <input
     id="password-length"
     type="range"
-    min="12"
+    min="8"
     max="32"
     value="16"
     class="w-full h-2 accent-primary bg-gray-300 rounded-full appearance-none cursor-pointer"
