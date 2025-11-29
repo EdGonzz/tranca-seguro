@@ -12,23 +12,25 @@ export const getPasswordStrength = (
 ) => {
   let score = 0;
 
-  if (length >= 8) score++;
+  if (length >= 12) score++;
+  if (length >= 16) score++;
   if (useNumbers) score++;
   if (useSymbols) score++;
 
-  if (score === 1) {
+  if (score <= 1) {
     passwordStrength.classList.remove("password-strength-medium");
     passwordStrength.classList.remove("password-strength-strong");
     passwordStrength.classList.add("password-strength-weak");
     strengthSpan.style.color = "red";
     return "Débil";
-  } else if (score === 2) {
-    passwordStrength.classList.remove("password-strength-weak");
+  }
+  if (score <= 3) {
+    passwordStrength.classList.remove("password-strength-medium");
     passwordStrength.classList.remove("password-strength-strong");
     passwordStrength.classList.add("password-strength-medium");
     strengthSpan.style.color = "orange";
     return "Medio";
-  } else if (score === 3) {
+  } else {
     passwordStrength.classList.remove("password-strength-weak");
     passwordStrength.classList.remove("password-strength-medium");
     passwordStrength.classList.add("password-strength-strong");
