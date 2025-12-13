@@ -11,6 +11,19 @@ body {
   font-family: "Ubuntu Sans Mono Variable", monospace;
 }
 
+/* Screen reader only - oculta visualmente pero mantiene accesible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .password-strength-weak {
   background-color: red;
   width: 20%;

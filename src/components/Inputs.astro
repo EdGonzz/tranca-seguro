@@ -1,25 +1,27 @@
-<div class="m-0 flex flex-col gap-2">
+<fieldset class="m-0 flex flex-col gap-2">
+  <legend class="sr-only">Fortaleza de la contraseña</legend>
   <div class="flex justify-between">
     <label
       for="password-strength"
       class="text-sm font-medium text-heading"
       >Fortaleza de la contraseña</label
     >
-    <span id="strength-span">Fuerte</span>
+    <span id="strength-span" aria-live="polite">Fuerte</span>
   </div>
-  <div class="h-2 bg-gray-300 rounded-full overflow-hidden">
+  <div class="h-2 bg-gray-300 rounded-full overflow-hidden" role="progressbar" aria-labelledby="strength-span">
     <div class="password-strength-strong h-full transition-all duration-500" id="password-strength"></div>
   </div>
-</div>
+</fieldset>
 
-<div class="m-0 flex flex-col gap-3">
+<fieldset class="m-0 flex flex-col gap-3">
+  <legend class="sr-only">Configuración de longitud de contraseña</legend>
   <div class="flex justify-between items-center">
     <label
       for="password-length"
       class="text-sm font-medium text-heading"
       >Longitud de la contraseña</label
     >
-    <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-bold" id="length-span">16</span>
+    <span class="px-3 py-1 bg-primary/10 text-primary rounded-lg font-bold" id="length-span" aria-live="polite">16</span>
   </div>
   <input
     id="password-length"
@@ -27,6 +29,10 @@
     min="8"
     max="32"
     value="16"
+    aria-valuemin="8"
+    aria-valuemax="32"
+    aria-valuenow="16"
+    aria-label="Ajustar longitud de la contraseña"
     class="w-full h-2 accent-primary bg-gray-300 rounded-full appearance-none cursor-pointer"
   />
   <div class="flex justify-between">
@@ -36,9 +42,10 @@
     >
     <span class="text-sm text-slate-600 dark:text-slate-400">32</span>
   </div>
-</div>
+</fieldset>
 
-<div class="m-0 flex flex-col gap-4">
+<fieldset class="m-0 flex flex-col gap-4">
+  <legend class="sr-only">Opciones de caracteres a incluir</legend>
   <div class="flex items-start">
     <div class="flex items-center h-5">
       <input

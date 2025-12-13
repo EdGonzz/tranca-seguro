@@ -7,16 +7,17 @@ import Inputs from "./Inputs.astro";
   class="flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8"
 >
   <div class="w-full max-w-md space-y-8">
-    <header class="text-center">
-      <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">
+    <div class="text-center" role="region" aria-labelledby="page-title">
+      <h1 id="page-title" class="text-3xl font-extrabold text-slate-900 dark:text-white">
         Generador de Contraseñas Seguras
-      </h2>
+      </h1>
       <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
         Cree contraseñas fuertes y únicas para proteger sus cuentas.
       </p>
-    </header>
+    </div>
 
     <form
+      aria-label="Formulario de generación de contraseñas"
       class="bg-white flex flex-col gap-6 dark:bg-slate-900/40 p-8 rounded-lg shadow-md space-y-6 border border-slate-200 dark:border-slate-800"
     >
       <PasswordLabel />
@@ -25,6 +26,7 @@ import Inputs from "./Inputs.astro";
         id="generate-password"
         class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary transition-all hover:scale-102"
         type="submit"
+        aria-label="Generar nueva contraseña segura"
       >
         Generar Contraseña
       </button>
