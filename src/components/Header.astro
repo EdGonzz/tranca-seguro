@@ -1,24 +1,27 @@
 ---
 import Lock from "@/assets/svg/lock.svg";
+import LinkedIn from "@/assets/svg/linkedin.svg";
+import GitHub from "@/assets/svg/github.svg";
 ---
 
 <header class="border-b border-slate-200 dark:border-slate-800" role="banner">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="container px-4 md:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center gap-2">
-        <Lock class="size-8 text-primary" aria-hidden="true" />
-        <span class="text-xl font-bold text-slate-900 dark:text-white">
+        <Lock class="size-6 md:size-8 text-primary" aria-hidden="true" />
+        <span class="text-md md:text-xl font-bold text-slate-900 dark:text-white">
           Tranca Seguro
         </span>
       </div>
-      <nav class="hidden md:flex items-center gap-8" aria-label="Enlaces externos">
+      <nav class="flex items-center gap-4 md:gap-6" aria-label="Enlaces externos">
         <a
           class="text-md font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
           href="https://www.linkedin.com/in/edwin-contreras-1bb516247/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visitar perfil de LinkedIn de Edwin Contreras (abre en nueva pestaña)"
-          >LinkedIn</a
+          title="LinkedIn"
+          ><LinkedIn class="size-4 md:size-6" aria-hidden="true" /></a
         >
         <a
           class="text-md font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
@@ -26,7 +29,8 @@ import Lock from "@/assets/svg/lock.svg";
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Ver código fuente en GitHub (abre en nueva pestaña)"
-          >Github</a
+          title="GitHub"
+          ><GitHub class="size-4 md:size-6" aria-hidden="true" /></a
         >
       </nav>
     </div>
