@@ -7,7 +7,9 @@
     A modern, secure, and customizable password generator.
     <br />
     <a href="https://github.com/EdGonzz/tranca-seguro"><strong>Explore the docs »</strong></a>
-    <img src="./public/device-mockup.webp" alt="Tranca Seguro Mockup">
+    <br />
+    <br />
+    <img src="./public/device-mockup.webp" alt="Tranca Seguro Mockup" width="600" height="450">
     <br />
     <br />
     <a href="#features">Features</a>
