@@ -1,46 +1,93 @@
-# Astro Starter Kit: Basics
+<a name="readme-top"></a>
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+<div align="center">
+  <img src="./public/favicon.svg" alt="Tranca Seguro Logo" width="80" height="80">
+  <h1 align="center">Tranca Seguro</h1>
+  <p align="center">
+    A modern, secure, and customizable password generator.
+    <br />
+    <a href="https://github.com/EdGonzz/tranca-seguro"><strong>Explore the docs »</strong></a>
+    <img src="./public/device-mockup.webp" alt="Tranca Seguro Mockup" width="800" height="450">
+    <br />
+    <br />
+    <a href="#features">Features</a>
+    ·
+    <a href="#getting-started">Getting Started</a>
+    ·
+    <a href="#tech-stack">Tech Stack</a>
+  </p>
+</div>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🔐 About the Project
 
-Inside of your Astro project, you'll see the following folders and files:
+**Tranca Seguro** is a web-based password generator designed to help users create strong, cryptographically secure passwords. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), it offers a fast, accessible, and intuitive experience for generating and managing secure credentials.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+### ✨ Features
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- 🛠 **Fully Customizable**: Adjust password length (from 1 to 50 characters) and toggle uppercase, lowercase, numbers, and symbols.
+- 📊 **Strength Indicator**: Visual feedback on the security level of your generated password.
+- 📋 **Copy to Clipboard**: One-click functionality to copy your password instantly, with toast notifications for feedback.
+- 🎨 **Premium UI**: A clean, modern, and responsive design with smooth animations.
+- 🌙 **Dark Mode Support**: Optimized for all lighting conditions.
+- ⚡ **Performance First**: Built with Astro for minimal client-side JavaScript and maximum speed.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🚀 Getting Started
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+### Prerequisites
 
-## 👀 Want to learn more?
+- [Node.js](https://nodejs.org/) (Latest LTS version recommended)
+- [pnpm](https://pnpm.io/) (Recommended) or `npm` / `yarn`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/EdGonzz/tranca-seguro.git
+   cd tranca-seguro
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+4. **Build for production**
+   ```bash
+   pnpm build
+   ```
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework**: [Astro 5.x](https://astro.build/)
+- **Styling**: [Tailwind CSS 4.x](https://tailwindcss.com/)
+- **Animations**: [@midudev/tailwind-animations](https://github.com/midudev/tailwind-animations)
+- **Typography**: [Ubuntu Sans Mono](https://fontsource.org/fonts/ubuntu-sans-mono)
+- **Icons**: [svgl.app](https://svgl.app/) | [Tabler Icons](https://tabler-icons.io/)
+
+---
+
+## 🧑‍💻 Author
+
+**Edwin Contreras**
+
+- GitHub: [@EdGonzz](https://github.com/EdGonzz/)
+- LinkedIn: [Edwin Contreras](https://www.linkedin.com/in/edwin-contreras-1bb516247/)
+- X: [EdGonzz](https://x.com/Ed_Gonzz_)
+
+---
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
